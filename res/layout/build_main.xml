@@ -1,0 +1,166 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="zce.app.python.compile.MainActivity" >
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/appName"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/appNameHint"
+        android:singleLine="true"
+        android:tag="APPNAME"
+        android:text="test"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/packageName"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_below="@+id/appName"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:digits="abcdefghijklmnopqrstuvwxyz."
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/packageNameHint"
+        android:singleLine="true"
+        android:tag="PACKAGENAME"
+        android:text="com.test"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/versionCode"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_below="@+id/packageName"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/versionCode"
+        android:inputType="number"
+        android:singleLine="true"
+        android:tag="VERSIONCODE"
+        android:text="1"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/versionName"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_below="@+id/versionCode"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/versionNameHint"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:tag="VERSIONNAME"
+        android:text="1.0"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/iconPath"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_below="@+id/versionName"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:drawableLeft="@drawable/ic_open"
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/iconPath"
+        android:singleLine="true"
+        android:tag="ICONPATH"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <zce.app.python.compile.widget.EditText
+        android:id="@+id/projectPath"
+        android:layout_width="match_parent"
+        android:layout_height="36dip"
+        android:layout_below="@+id/iconPath"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/edit_bg"
+        android:drawableLeft="@drawable/ic_open"
+        android:drawableRight="@drawable/edit_clear"
+        android:gravity="center"
+        android:hint="@string/projectPath"
+        android:singleLine="true"
+        android:tag="PROJECTPATH"
+        android:textColor="@android:color/darker_gray"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/projectPath"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rely_on_platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/checkbox_bg"
+            android:checked="true"
+            android:onClick="radioRelyOn"
+            android:text="@string/rely_on_platform" />
+
+        <RadioButton
+            android:id="@+id/include_platform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@drawable/checkbox_bg"
+            android:onClick="radioInclude"
+            android:text="@string/include_platform" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buildBtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_below="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/build_btn"
+        android:onClick="onBuild"
+        android:enabled="false"
+        android:text="@string/buildBtnText"
+        android:textColor="@android:color/darker_gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/buildBtn"
+        android:layout_centerHorizontal="true" >
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="all"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="@string/aboutText"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/darker_gray" />
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PyBuild</string>
+    <string name="appNameHint">应用程序名</string>
+    <string name="packageNameHint">包名(程序唯一标识)</string>
+    <string name="versionCode">versionCode(版本号)</string>
+    <string name="versionNameHint">versionName(版本名)</string>
+    <string name="buildBtnText">一键打包</string>
+    <string name="rely_on_platform">依赖平台打包</string>
+    <string name="include_platform">包含平台打包</string>
+    <string name="iconPath">图标路径(png,jpg文件小于100kb)</string>
+    <string name="projectPath">项目路径(单个文件或者目录,必须包含script.py文件)</string>
+    <string name="aboutText">\nBy: ざ凍結の→愛\nQQ: 892768447\nQQ群: 134840268\n\n该工具用于构建Android Python项目,方便把Python程序打包为apk发布,编译完成的apk文件存放在SD卡根目录(如果不存在则在本软件内部储存目录files下或者外置缓存目录Android/data/cache)本软件属于免费软件,但未经作者允许不得编辑修改再发布,谢谢使用!\n\n本人所写的一些Python模块、教程以及项目 http://www.douban.com/group/PyAndroid/</string>
+    <string name="exit">退出</string>
+
+</resources>
